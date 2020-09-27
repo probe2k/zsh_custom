@@ -9,6 +9,7 @@ SAVEHIST=100000
 
 # color ls
 alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 
 # source plugins from ~/.zsh-plugin
 source /home/probe/.zsh_plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
