@@ -10,7 +10,7 @@ SAVEHIST=100000
 # color ls
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias emu='/home/probe/Android/Sdk/emulator/emulator -avd Pixel_3 -qemu --enable-kvm'
+alias emu='/home/probe/Android/Sdk/emulator/emulator -avd Pixel_4_API_30 -qemu --enable-kvm'
 
 # source plugins from ~/.zsh-plugin
 source /home/probe/.zsh_plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
