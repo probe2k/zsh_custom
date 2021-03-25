@@ -15,7 +15,7 @@ To setup your zsh shell prompt in the same way, run these commands
 git clone https://github.com/probe2k/zsh_custom.git /tmp/
 mv /tmp/zsh_custom/.zshrc ~/.zshrc
 ```
-If you wanna setup the two plugins I am using, add this set of code as well
+If you wanna setup the two plugins I am using, run this set of commands as well
 
 ```
 mkdir ~/.zsh_plugin
