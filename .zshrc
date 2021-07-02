@@ -6,7 +6,13 @@ alias emu='/home/probe/Android/Sdk/emulator -avd Pixel_4 -qemu --enable-kvm'
 alias scr='ffmpeg -f x11grab -video_size 1920x1080 -i $DISPLAY -preset ultrafast "/home/probe/rec_`date +%b-%d-%I:%M:%S`.mp4"'
 alias scra='ffmpeg -f x11grab -video_size 1920x1080 -i $DISPLAY -f alsa -i default -preset ultrafast "/home/probe/rec_`date +%b-%d-%I:%M:%S`.mp4"'
 
-source /home/probe/.zsh_plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/probe/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/probe/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+HISTSIZE=100000
+HISTFILESIZE=2000000
+HISTFILE=/home/probe/.zsh/zsh_history
+SAVEHIST=100000
 
 typeset -g -A key
 
