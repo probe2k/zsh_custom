@@ -1,3 +1,20 @@
+RED='\033[0;31m'
+GRE='\033[0;32m'
+BLU='\033[0;34m'
+CYA='\033[0;36m'
+NC='\033[0m'
+
+echo -e " ${RED}
+██▓███   ██▀███   ▒█████   ▄▄▄▄   ▓█████
+▓██░  ██▒▓██ ▒ ██▒▒██▒  ██▒▓█████▄ ▓█   ▀
+▓██░ ██▓▒▓██ ░▄█ ▒▒██░  ██▒▒██▒ ▄██▒███
+▒██▄█▓▒ ▒▒██▀▀█▄  ▒██   ██░▒██░█▀  ▒▓█  ▄
+▒██▒ ░  ░░██▓ ▒██▒░ ████▓▒░░▓█  ▀█▓░▒████▒
+▒▓▒░ ░  ░░ ▒▓ ░▒▓░░ ▒░▒░▒░ ░▒▓███▀▒░░ ▒░ ░
+░▒ ░       ░▒ ░ ▒░  ░ ▒ ▒░ ▒░▒   ░  ░ ░  ░
+░░         ░░   ░ ░ ░ ░ ▒   ░    ░    ░
+    	${GRE}       Lord of Darkness  ${RED}░${BLU} probe2k
+				   ${NC}"
 PROMPT='%(!.%F{yellow}%B%~%b %F{red}%B#%b%f .%F{yellow}%B%~%b %F{blue}%B$%b %f)'
 
 alias ls='ls --color=auto'
@@ -14,6 +31,14 @@ HISTSIZE=100000
 HISTFILESIZE=2000000
 HISTFILE=/home/probe/.config/zsh/zsh_history
 SAVEHIST=100000
+
+fcd() {
+	cd "$(find -type d | fzf)"
+}
+
+open() {
+	xdg-open "$(find -type f | fzf)"
+}
 
 typeset -g -A key
 
