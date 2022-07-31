@@ -1,21 +1,4 @@
-RED='\033[0;31m'
-GRE='\033[0;32m'
-BLU='\033[0;34m'
-CYA='\033[0;36m'
-NC='\033[0m'
-
-echo -e " ${RED}
-██▓███   ██▀███   ▒█████   ▄▄▄▄   ▓█████
-▓██░  ██▒▓██ ▒ ██▒▒██▒  ██▒▓█████▄ ▓█   ▀
-▓██░ ██▓▒▓██ ░▄█ ▒▒██░  ██▒▒██▒ ▄██▒███
-▒██▄█▓▒ ▒▒██▀▀█▄  ▒██   ██░▒██░█▀  ▒▓█  ▄
-▒██▒ ░  ░░██▓ ▒██▒░ ████▓▒░░▓█  ▀█▓░▒████▒
-▒▓▒░ ░  ░░ ▒▓ ░▒▓░░ ▒░▒░▒░ ░▒▓███▀▒░░ ▒░ ░
-░▒ ░       ░▒ ░ ▒░  ░ ▒ ▒░ ▒░▒   ░  ░ ░  ░
-░░         ░░   ░ ░ ░ ░ ▒   ░    ░    ░
-    	${GRE}       Lord of Darkness  ${RED}░${BLU} probe2k
-				   ${NC}"
-PROMPT='%(!.%F{yellow}%B%~%b %F{red}%B#%b%f .%F{yellow}%B%~%b %F{blue}%B$%b %f)'
+PROMPT='%(!.%F{red}%B→ %b%F{cyan}%B%n %b%F{red}%B[%b%F{green}%~%F{red}%B]%b%f .%F{blue}%B→ %b%F{cyan}%B%n %b%F{red}%B[%b%F{green}%~%F{red}%B]%b%f )'
 
 alias ls='ls --color=auto'
 alias ip='ip -c'
