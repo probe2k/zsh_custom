@@ -15,14 +15,6 @@ HISTFILESIZE=2000000
 HISTFILE=/home/probe/.config/zsh/zsh_history
 SAVEHIST=100000
 
-fcd() {
-	cd "$(find -type d | fzf)"
-}
-
-open() {
-	xdg-open "$(find -type f | fzf)"
-}
-
 typeset -g -A key
 
 key[Home]="${terminfo[khome]}"
