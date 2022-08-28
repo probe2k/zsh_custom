@@ -15,6 +15,12 @@ HISTFILESIZE=2000000
 HISTFILE=/home/probe/.config/zsh/zsh_history
 SAVEHIST=100000
 
+precmd() {
+	precmd() {
+		echo
+	}
+}
+
 typeset -g -A key
 
 key[Home]="${terminfo[khome]}"
