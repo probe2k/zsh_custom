@@ -1,4 +1,5 @@
-PROMPT='%(!.%b%F{red}%B[%b%F{yellow}%~%F{red}%B]%b%f %F{red}%B→ %b%F{cyan}%B💀%b .%b%F{red}%B[%b%F{yellow}%~%F{red}%B]%b%f%F{blue}%B → %b%F{cyan}%Bλ%b )'
+#PROMPT='%(!.%F{red}%B[%b%F{yellow}%~%F{red}%B]%b%f %F{red}%B→ %b%F{cyan}%B💀%b .%b%F{red}%B[%b%F{yellow}%~%F{red}%B]%b%f%F{blue}%B → %b%F{cyan}%Bλ%b )'
+PROMPT='%(!.%F{208}%~%f %F{009}%n%f%F{014}@%f%F{249}%m%f .%F{208}%~%f %F{011}%n%f%F{014}@%f%F{249}%m%f )'
 
 alias ls='ls --color=auto'
 alias ip='ip -c'
