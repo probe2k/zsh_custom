@@ -1,6 +1,4 @@
-#PROMPT='%(!.%F{red}%B[%b%F{yellow}%~%F{red}%B]%b%f %F{red}%B→ %b%F{cyan}%B💀%b .%b%F{red}%B[%b%F{yellow}%~%F{red}%B]%b%f%F{blue}%B → %b%F{cyan}%Bλ%b )'
-# PROMPT='%(!.%F{208}%~%f %F{009}%n%f%F{014}@%f%F{249}%m%f .%F{208}%~%f %F{011}%n%f%F{014}@%f%F{249}%m%f )'
-PS1='%F{blue}%~ %(?.%F{green}.%F{red})%# %f'
+PROMPT='%F{blue}%~%f'$'\n''%(!.%F{red}#.%F{green}❯)%f '
 
 alias ls='ls --color=auto'
 alias ip='ip -c'
@@ -16,6 +14,12 @@ HISTSIZE=100000
 HISTFILESIZE=2000000
 HISTFILE=/home/probe/.config/zsh/zsh_history
 SAVEHIST=100000
+
+precmd() {
+	precmd() {
+		echo
+	}
+}
 
 typeset -g -A key
 
