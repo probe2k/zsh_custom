@@ -1,13 +1,28 @@
 # PROMPT='%F{blue}%~%f'$'\n''%(!.%F{red}# .%F{green}❯ )%f'
 # PROMPT='%(?.%F{green}.%F{red}) %(!.%F{red}%n.%F{green}%n)%f %F{yellow}%~%f '
-PROMPT='%(?.%F{green}.%F{red}) %B%(!.%F{red}%n.%F{117}%n)%f %F{214}%~%f%b '
+# PROMPT='%(?.%F{green}.%F{red}) %B%(!.%F{red}%n.%F{117}%n)%f %F{214}%~%f%b '
+
+setopt PROMPT_SUBST
+
+git_prompt_info() {
+    local branch_name dirty_status
+    branch_name=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    dirty_status=$(git diff --shortstat 2>/dev/null)
+
+    if [ -n "$branch_name" ]; then
+        echo "%F{green}%f %F{81}$branch_name${dirty_status:+*}%f"
+    fi
+}
+
+PROMPT='%(?.%F{green}✔ .%F{red}✘ ) %B%F{117}ヤッ %f%b%F{blue}%f %F{228}%B%~%f %F{141}$(git_prompt_info)%f%b%f'$'\n''%(!.%F{red}%B󰚌%b .%F{green}%B󰊠%b )%f '
 
 alias ls='ls --color=auto'
 alias ip='ip -c'
+alias t='tmux'
 alias grep='grep --color=auto'
 alias cat='bat -f '
-alias scr='ffmpeg -f x11grab -video_size 1920x1080 -i $DISPLAY -preset ultrafast "/home/probe/rec_`date +%b-%d-%I:%M:%S`.mp4"'
-alias scra='ffmpeg -f x11grab -video_size 1920x1080 -i $DISPLAY -f alsa -i default -preset ultrafast "/home/probe/rec_`date +%b-%d-%I:%M:%S`.mp4"'
+# alias scr='ffmpeg -f x11grab -video_size 1920x1080 -i $DISPLAY -preset ultrafast "/home/probe/rec_`date +%b-%d-%I:%M:%S`.mp4"'
+# alias scra='ffmpeg -f x11grab -video_size 1920x1080 -i $DISPLAY -f alsa -i default -preset ultrafast "/home/probe/rec_`date +%b-%d-%I:%M:%S`.mp4"'
 alias hs='nmcli device wifi hotspot ifname wlp3s0 band bg ssid Hotspot password inspiron'
 
 source /home/probe/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -17,6 +32,12 @@ HISTSIZE=100000
 HISTFILESIZE=2000000
 HISTFILE=/home/probe/.config/zsh/zsh_history
 SAVEHIST=100000
+
+precmd() {
+	precmd() {
+		echo
+	}
+}
 
 typeset -g -A key
 
@@ -59,7 +80,14 @@ fi
 
 # if [ -t 0 ] && [[ -z $TMUX ]] && [[ $- = *i* ]]; then exec tmux; fi
 
-## Conda setup
+# If not running interactively, do not do anything
+# [[ $- != *i* ]] && return
+# Otherwise start tmux
+# [[ -z "$TMUX" ]] && exec tmux
+
+# if [ -t 0 ] && [[ -z $TMUX ]] && [[ $- = *i* ]]; then exec tmux; fi
+
+## conda setup
 #__conda_setup="$('/home/probe/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 #if [ $? -eq 0 ]; then
 #    eval "$__conda_setup"
@@ -67,7 +95,7 @@ fi
 #    if [ -f "/home/probe/anaconda3/etc/profile.d/conda.sh" ]; then
 #        . "/home/probe/anaconda3/etc/profile.d/conda.sh"
 #    else
-#        export PATH="/home/probe/anaconda3/bin:$PATH"
+#        export path="/home/probe/anaconda3/bin:$path"
 #    fi
 #fi
 #unset __conda_setup
